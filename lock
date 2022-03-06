@@ -1,0 +1,31 @@
+local SecondButton = AimlockPage.AddButton("Dimag Aimlock (Q)", function()
+    _G.KEY = "q"
+    _G.PART = "LowerTorso"
+    _G.PRED = 0.037
+    _G.Frame = Vector3.new(0,0.53,0)
+    _G.AIR = -0.5
+    _G.SHIT = 0.1
+    
+    
+    local CC = game:GetService "Workspace".CurrentCamera
+    local Plr
+    local enabled = false
+    local accomidationfactor = nil
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    local placemarker = Instance.new("Part", game.Workspace)
+    local guimain = Instance.new("Folder", game.CoreGui)
+    
+    getgenv().makemarker = function(Parent, Adornee, Color, Size, Size2)
+        local e = Instance.new("BillboardGui", Parent)
+        e.Name = "PP"
+        e.Adornee = Adornee
+        e.Size = UDim2.new(Size, Size2, Size, Size2)
+        e.AlwaysOnTop = true
+        local a = Instance.new("Frame", e)
+        a.Size = UDim2.new(4, 0, 4, 0)
+        a.BackgroundTransparency = 0.1
+        a.BackgroundColor3 = Color
+        local g = Instance.new("UICorner", a)
+        g.CornerRadius = UDim.new(50, 50)
+        return (e)
+    end
